@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background-image: url(./images/bg-desktop-dark.jpg);
+  background-color: hsl(235, 21%, 11%);
+  background-repeat: no-repeat;
+  background-size: 100vw 40vh;
+  font-size: 10px;
+  display: flex;
+}
+
+section {
+  margin: 8rem auto;
+  width: 40vw;
+  align-items: center;
+}
+
+header {
+  margin-bottom: 3rem;
+  display: flex;
+  /* gap: 75%; */
+  justify-content: space-between;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: hsl(0, 0%, 98%);
+  /* display: flex; */
+  align-items: center;
+  font-size: 2rem;
+}
+
+.icon {
+  background-image: url(./images/icon-sun.svg);
+  height: 30px;
+  width: 30px;
+  background-repeat: no-repeat;
+  display: flex;
+  align-self: center;
+}
+
+.input {
+  width: 100%;
+  height: 3rem;
+  background-color: hsl(237, 14%, 26%);
+  border-radius: 0.5rem;
+  border: solid 0;
+  margin-bottom: 1.5rem;
+  color: hsl(0, 0%, 98%);
+  font-size: 1.4rem;
+  font-family: "Josefin Sans", sans-serif;
+  padding-left: 1rem;
+}
+
+.item {
+  background-color: hsl(237, 14%, 26%);
+  border: solid 0;
+  margin: 0;
+  border-bottom: solid 1px hsl(234, 11%, 52%);
+  font-size: 1.4rem;
+  padding: 1rem;
+  border-radius: 5px 5px 0 0;
+  font-weight: 400;
+  color: hsl(234, 39%, 85%);
+  line-height: 2rem;
+  word-break: break-all;
+}
+
+.item__content {
+  display: grid;
+  grid-template-columns: 30px 1fr 30px;
+}
+
+.item__content__checkbox {
+  margin-right: 1rem;
+}
+
+input:checked + label {
+  text-decoration: line-through;
+  text-decoration-color: hsl(234, 39%, 85%);
+}
+
+.item__content__deletebtn {
+  height: 20px;
+  display: flex;
+  align-self: center;
+  margin-right: 0.5rem;
+}
+
+.item__content:hover {
+  cursor: pointer;
+}
+
+button {
+  background-color: hsl(237, 14%, 26%);
+  border: 0;
+  padding-right: 1rem;
+}
+
+.filter-info {
+  background-color: hsl(237, 14%, 26%);
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  color: hsl(233, 11%, 84%);
+  height: 3rem;
+  align-items: center;
+  border-radius: 0 0 5px 5px;
+  padding-right: 1rem;
+}
+
+.filter-info__counter {
+  font-size: 1rem;
+  padding-left: 1rem;
+  padding-right: 0.5rem;
+}
+
+.filter-info > button {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: hsl(234, 39%, 85%);
+}
+
+.filter-info > button:hover {
+  cursor: pointer;
+  font-weight: 600;
+  color: hsl(0, 0%, 100%);
+}
+
+/*LIGHT THEME*/
+
+.light {
+  background-image: url(./images/bg-desktop-light.jpg);
+  background-color: hsl(233, 11%, 84%);
+  background-repeat: no-repeat;
+}
+
+.light input {
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(235, 21%, 11%);
+}
+
+.light ::placeholder {
+  color: hsl(235, 19%, 35%);
+}
+
+.light h1 {
+  color: hsl(235, 21%, 11%);
+}
+
+.light .item {
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(235, 21%, 11%);
+}
+
+.light button {
+  background-color: hsl(0, 0%, 98%);
+}
+
+.light .filter-info {
+  color: hsl(235, 21%, 11%);
+  background-color: hsl(0, 0%, 98%);
+}
+
+.light .filter-info > button {
+  color: hsl(235, 21%, 11%);
+}
+
+.light.filter-info > button:hover {
+  color: hsl(235, 21%, 11%);
+}
+
+.light .icon {
+  background-image: url(./images/icon-moon.svg);
+}
+
+.light input:checked + label {
+  text-decoration-color: hsl(235, 21%, 11%);
+}
+
+@media (max-width: 25rem) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-size: 100vw 80vh;
+  }
+
+  section {
+    width: 80vw;
+  }
+
+  header {
+    margin-bottom: 3rem;
+    display: flex;
+    /* gap: 57%; */
+  }
+
+  .filter-info {
+    background-color: hsl(237, 14%, 26%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    color: hsl(233, 11%, 84%);
+    height: 4rem;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-radius: 0 0 5px 5px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    word-break: break-all;
+  }
+}
+
+@media (max-width: 60rem) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-size: 100vw 40vh;
+  }
+
+  section {
+    width: 80vw;
+  }
+
+  header {
+    margin-bottom: 3rem;
+    display: flex;
+    gap: 57%;
+  }
+
+  .filter-info {
+    background-color: hsl(237, 14%, 26%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    color: hsl(233, 11%, 84%);
+    height: 4rem;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-radius: 0 0 5px 5px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
