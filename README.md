@@ -1,5 +1,8 @@
 ## TODO-List
-A traditional todo app built with React.
+A traditional todo app.
+
+## Built with
+#### `HTML/CSS/React`
 
 ### Description
 A todo app that allows to add new tasks, mark them as completed and delete marked ones. Also you can filter tasks: active(not completed) and completed. App has dark/light mode.
