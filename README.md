@@ -7,6 +7,11 @@ A traditional todo app.
 ### Description
 A todo app that allows to add new tasks, mark them as completed and delete marked ones. Also you can filter tasks: active(not completed) and completed. App has dark/light mode.
 
+### Link 
+https://todo-list-ivory-ten.vercel.app/
+
+![](chrome-capture-2023-4-10.gif)
+
 ### Available Scripts
 
 In the project directory, you can run:
