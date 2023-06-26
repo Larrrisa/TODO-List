@@ -3,7 +3,6 @@ function TaskList({
   handleChangeNewCheckbox,
   deleteLogo,
   item,
-  id,
 }) {
   return (
     <div key={item.id} className="item__content">
@@ -11,7 +10,7 @@ function TaskList({
         id={item.id}
         type="checkbox"
         checked={item.checked}
-        onChange={(event) => handleChangeNewCheckbox(event, id)}
+        onChange={() => handleChangeNewCheckbox(item.id, item.checked)}
         className="item__content__checkbox"
       />
       <label className="item__content__title">{item.title}</label>
