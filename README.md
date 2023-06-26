@@ -4,6 +4,8 @@ A traditional todo app.
 ## Built with
 #### `HTML/CSS/React`
 
+Version with Redux Toolkit https://github.com/Larrrisa/TODO-List/tree/redux
+
 ### Description
 A todo app that allows to add new tasks, mark them as completed and delete marked ones. Also you can filter tasks: active(not completed) and completed. App has dark/light mode.
 
