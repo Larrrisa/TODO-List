@@ -1,4 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import {
+  addTodo,
+  toggleComplete,
+  deleteTodo,
+  clearCompletedTodo,
+} from "./redux/slice";
+import { useSelector } from "react-redux";
 
 import Header from "./components/Header";
 import Input from "./components/Input";
@@ -8,11 +16,10 @@ import deleteLogo from "./images/icon-cross.svg";
 import moonLogo from "./images/icon-moon.svg";
 
 function App() {
-  const [todo, setTodo] = useState([
-    { id: Math.random() * 10, title: "Пример", checked: false },
-  ]);
   const [input, setInput] = useState("");
-  const [filter, setFilter] = useState("all");
+  const dispatch = useDispatch();
+  const todos = useSelector((state) => state.todos.list);
+  const filter = useSelector((state) => state.todos.filter);
 
   function handleChange(i) {
     setInput(i.target.value);
@@ -20,25 +27,18 @@ function App() {
 
   function handleSubmit(i) {
     i.preventDefault();
-    setTodo([
-      { id: Math.random() * 10, title: `${input}`, checked: false },
-      ...todo,
-    ]);
+    if (input) {
+      dispatch(addTodo({ title: input }));
+    }
     setInput("");
   }
 
-  function handleChangeNewCheckbox(event, id) {
-    const newTodo = [...todo];
-    newTodo[id].checked = event.target.checked;
-
-    setTodo(newTodo);
+  function handleChangeNewCheckbox(id, checked) {
+    dispatch(toggleComplete({ id, checked: !checked }));
+    console.log(todos);
   }
 
-  function handleFilterChange(filter) {
-    setFilter(filter);
-  }
-
-  const filteredTasks = todo.filter((item) => {
+  const filteredTasks = todos.filter((item) => {
     if (filter === "completed") {
       return item.checked;
     } else if (filter === "active") {
@@ -49,11 +49,11 @@ function App() {
   });
 
   function handleClear() {
-    setTodo(todo.filter((item) => !item.checked));
+    dispatch(clearCompletedTodo());
   }
 
   function countItems() {
-    const count = todo.filter((item) => !item.checked);
+    const count = todos.filter((item) => !item.checked);
     if (count.length === 1) {
       return `1 item left`;
     } else {
@@ -62,8 +62,7 @@ function App() {
   }
 
   function handleDeleteButton(id) {
-    const remainingItems = todo.filter((item) => item.id !== id);
-    setTodo(remainingItems);
+    dispatch(deleteTodo({ id }));
   }
 
   function handleSwitchThem() {
@@ -90,7 +89,6 @@ function App() {
         ))}
       </div>
       <FilterList
-        handleFilterChange={handleFilterChange}
         countItems={countItems}
         handleClear={handleClear}
       />
