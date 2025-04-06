@@ -1,16 +1,7 @@
 ## TODO-List
-A traditional todo app.
+Приложение для ведения задач с фильтрацией и тёмной темой.
 
-## Built with
-#### `HTML/CSS/React`
-
-Version with Redux Toolkit https://github.com/Larrrisa/TODO-List/tree/redux
-
-### Description
-A todo app that allows to add new tasks, mark them as completed and delete marked ones. Also you can filter tasks: active(not completed) and completed. App has dark/light mode.
-
-### Link 
-https://todo-list-ivory-ten.vercel.app/
+🔗 **Live Demo**: [todo-list-ivory-ten.vercel.app](https://todo-list-ivory-ten.vercel.app/)
 
 ![](chrome-capture-2023-4-10.gif)
 
