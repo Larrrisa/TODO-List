@@ -23,6 +23,6 @@
   ![](chrome-capture-2023-4-10.gif)
 
 ## 📦 Установка
-**npm install**
-**npm start**
-**Откройте http://localhost:3000 в браузере**
+1. npm install
+2. npm start
+3. Откройте http://localhost:3000 в браузере
